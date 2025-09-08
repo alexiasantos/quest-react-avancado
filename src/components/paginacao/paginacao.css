@@ -1,0 +1,92 @@
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7em;
+    margin: 2em 0 1em 0;
+    padding: 0;
+    list-style: none;
+}
+
+.buttonPagination button,
+.buttonPrev button,
+.buttonNext button {
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 12px;
+    border: 2px solid #2a75bb;
+    padding: 0.5em 1.2em;
+    margin: 0 0.2em;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    outline: none;
+}
+
+.buttonPagination button {
+    background: linear-gradient(135deg, #2a75bb 0%, #3b4cca 100%);
+    color: #ffcb05;
+}
+
+.buttonPagination button:hover,
+.buttonPagination button:focus {
+    background: #ffcb05;
+    color: #2a75bb;
+    border-color: #ffcb05;
+    transform: scale(1.08);
+}
+
+.buttonPrev button,
+.buttonNext button {
+    background: linear-gradient(135deg, #ffcb05 0%, #f7d51d 100%);
+    color: #2a75bb;
+}
+
+.buttonPrev button:hover,
+.buttonNext button:hover,
+.buttonPrev button:focus,
+.buttonNext button:focus {
+    background: #2a75bb;
+    color: #ffcb05;
+    border-color: #2a75bb;
+    transform: scale(1.08);
+}
+
+.buttonPagination button[aria-current="true"] {
+    background: #e3350d;
+    color: #fff;
+    border-color: #e3350d;
+}
+
+.buttonPrev[disabled] button,
+.buttonNext[disabled] button {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 700px) {
+    ul {
+        gap: 0.3em;
+        margin: 1em 0 0.5em 0;
+    }
+    .buttonPagination button,
+    .buttonPrev button,
+    .buttonNext button {
+        font-size: 1em;
+        padding: 0.4em 0.8em;
+    }
+}
+
+@media (max-width: 450px) {
+    ul {
+        flex-wrap: wrap;
+        gap: 0.2em;
+    }
+    .buttonPagination button,
+    .buttonPrev button,
+    .buttonNext button {
+        font-size: 0.95em;
+        padding: 0.3em 0.6em;
+        min-width: 36px;
+    }
+}
